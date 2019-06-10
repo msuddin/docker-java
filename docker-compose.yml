@@ -1,0 +1,16 @@
+version: '3'
+services:
+
+  # This is the name of the service - can be anything
+  sample-docker-java-1:
+    # Building instructions for the service
+    build:
+      # Set the working directory of the service
+      context: .
+      # Location of the Dockerfile
+      dockerfile: Dockerfile
+
+  sample-docker-java-2:
+    build:
+      context: .
+      dockerfile: Dockerfile
