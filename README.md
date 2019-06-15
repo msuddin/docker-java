@@ -10,24 +10,39 @@ Answer:
 * And create a dockerfile that creates a docker image (that run's a jar)
 * A running instance of a docker image is called a container
 * In build.gradle file, to add an entry point for the 'main method' in the jar every time gradle build
-* The following three commands are then run 
 
+## Instructions on running
+
+### To run using 'Docker Build and Docker Run'
+
+From the root directory of the project
+Clean the project and build it
 ```
-// Build the Jar which contains an entry point to the maind method
-gradle clean build
-
-// Build a Docker Image using a docker file - this copies in the jar on the image
+./gradlew clean build
+```
+Build the docker images
+```
 docker build --tag 'sample-docker-java' .
-
-// Run the Docker image which explicitly runs the java jar
+```
+Run the docker container
+```
 docker run sample-docker-java
 ```
-* Instead of running docker build and docker run above, can use the docker-compose up instead
+### To run using 'Docker Compose'
+
+From the root directory of the project
+Clean the project and build it
+```
+./gradlew clean build
+```
+Run docker-compose (the compose file will run two docker containers at the same time - two instances of the same application)
+
 ```
 docker-compose up
 ```
 * That will run the docker-compose.yml file instead which will run a docker container
 * Have found that any files mentioned in dockerfile or docker-compose.yml need to be in child directory of the docker files
+
 
 ## Notes
 
