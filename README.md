@@ -55,3 +55,9 @@ docker stop $(docker ps -aq) && docker rm $(docker ps -aq)
 // Remove all Docker Images
 docker rmi $(docker images)
 ```
+
+### For Windows
+You may want to set the following command if docker-compose throws back a tls issue:
+```
+SET COMPOSE_TLS_VERSION=TLSv1_2
+```
